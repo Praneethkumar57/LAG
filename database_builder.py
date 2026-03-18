@@ -35,7 +35,7 @@
 #     pdf_files = [f for f in os.listdir(PAPERS_DIR) if f.endswith('.pdf')]
     
 #     for filename in pdf_files:
-#         print(f"📝 Processing: {filename}...")
+#         print(f"Processing: {filename}...")
 #         loader = PyPDFLoader(os.path.join(PAPERS_DIR, filename))
 #         pages = loader.load()
 #         full_text = " ".join([p.page_content for p in pages])
@@ -52,10 +52,10 @@
 #         all_docs.append(doc)
 
 #     # 3. Create and Save FAISS Database
-#     print("🚀 Creating Vector Database...")
+#     print("Creating Vector Database...")
 #     vectorstore = FAISS.from_documents(all_docs, embeddings)
 #     vectorstore.save_local(DB_PATH)
-#     print(f"✅ Database saved to {DB_PATH}")
+#     print(f"Database saved to {DB_PATH}")
 
 # if __name__ == "__main__":
 #     build_database()
@@ -119,7 +119,7 @@ def build_database():
     pdf_files = [f for f in os.listdir(PAPERS_DIR) if f.endswith('.pdf')]
     
     for filename in pdf_files:
-        print(f"📝 Extracting Tech & Metrics: {filename}...")
+        print(f"Extracting Tech & Metrics: {filename}...")
         try:
             loader = PyPDFLoader(os.path.join(PAPERS_DIR, filename))
             pages = loader.load()
@@ -138,9 +138,9 @@ def build_database():
             )
             all_docs.append(doc)
         except Exception as e:
-            print(f"⚠️ Failed to process {filename}: {e}")
+            print(f"Failed to process {filename}: {e}")
 
-    print("🚀 Building Vector Database...")
+    print("Building Vector Database...")
     vectorstore = FAISS.from_documents(all_docs, embeddings)
     vectorstore.save_local(DB_PATH)
     print(f"✅ Database saved to {DB_PATH}")
