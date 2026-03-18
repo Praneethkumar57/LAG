@@ -7,7 +7,7 @@
 # EMBED_MODEL = "nomic-embed-text-v2-moe"
 
 # st.set_page_config(page_title="Paper Search Engine", layout="centered")
-# st.title("🔎 Research Paper Discovery")
+# st.title("Research Paper Discovery")
 
 # @st.cache_resource
 # def load_db():
@@ -30,7 +30,7 @@
 #             with st.container(border=True):
 #                 col1, col2 = st.columns([1, 4])
 #                 col1.metric("Rank", i + 1)
-#                 col2.markdown(f"### 📄 {doc.metadata['title']}")
+#                 col2.markdown(f"### {doc.metadata['title']}")
 #                 with col2.expander("Show Indexed Keywords"):
 #                     st.write(doc.metadata['keywords'])
 
@@ -75,13 +75,13 @@ try:
                 col1, col2 = st.columns([1, 5])
                 col1.metric("Relevance", f"{5-i}/5")
                 
-                col2.markdown(f"### 📄 {doc.metadata.get('title', 'Unknown Title')}")
+                col2.markdown(f"### {doc.metadata.get('title', 'Unknown Title')}")
                 
                 # Highlight that this was analyzed via LMDA
                 if doc.metadata.get('analysis_type') == 'LMDA':
                     st.caption("Indexed via Multi-Dimensional Factor Analysis")
                 
-                with col2.expander("🛠️ Technical Profile (Tech/Metrics/Concepts)"):
+                with col2.expander("Technical Profile (Tech/Metrics/Concepts)"):
                     st.write(doc.metadata.get('technical_profile', "No profile available."))
 
 except Exception as e:
