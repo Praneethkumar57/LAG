@@ -1,0 +1,1 @@
+A retrieval system used for papers extraction, it is model which depends on lexical and semantic bases. We designed a streamlit UI so users can search for papers either keyword based or sentence based. This model tries to retrieve the most relevant papers based on your keywords or semantic meaning of the query you passed.
